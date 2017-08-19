@@ -21,6 +21,8 @@ class SearchBar extends Component {
 
   onFormSubmit (e) {
     e.preventDefault()
+
+
   }
 
   render () {
