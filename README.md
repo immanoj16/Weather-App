@@ -10,7 +10,7 @@ It is a simple react redux single page web application that shows the temperatur
     `
     npm install
     `
-  * create an Youtube API key from [here](https://developers.google.com/maps/)
+  * create an Google Map API key from [here](https://developers.google.com/maps/)
   * Copy the API key and replace the API_KEY in project folder src/index.html
   * Run the application, run 
     `
