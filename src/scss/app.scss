@@ -7,15 +7,11 @@ body {
   margin-bottom: 20px;
 }
 
-.left {
-  text-align: left;
+td, th {
+  vertical-align: middle !important;
+  text-align: center !important;
 }
 
-.center {
-  text-align: center;
-}
-
-.chart {
-  height: 160px;
-  width: 190px;
+svg {
+  height: 150px;
 }
