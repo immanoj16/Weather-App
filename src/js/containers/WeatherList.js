@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Sparklines, SparklinesLine } from 'react-sparklines'
+
+import Chart from '../components/chart'
 
 class WeatherList extends Component {
 
@@ -10,38 +11,27 @@ class WeatherList extends Component {
     const temps = cityData.list.map(weather => weather.main.temp)
     const pressures = cityData.list.map(weather => weather.main.pressure)
     const humidities = cityData.list.map(weather => weather.main.humidity)
+
     return (
       <tr key={name}>
-        <td>{name}</td>
-        <td>
-          <Sparklines height={120} width={180} data={temps}>
-            <SparklinesLine color="blue" />
-          </Sparklines>
-        </td>
-        <td>
-          <Sparklines height={120} width={180} data={pressures}>
-            <SparklinesLine color="blue" />
-          </Sparklines>
-        </td>
-        <td>
-          <Sparklines height={120} width={180} data={humidities}>
-            <SparklinesLine color="blue" />
-          </Sparklines>
-        </td>
+        <td className='chart left'>{name}</td>
+        <td className='chart center'><Chart data={temps} color="orange" unit="K"/></td>
+        <td className='chart center'><Chart data={pressures} color="green" unit="hPa"/></td>
+        <td className='chart center'><Chart data={humidities} color="black" unit="%"/></td>
       </tr>
     )
   }
 
   render() {
     return (
-      <div className="col-md-8 col-md-offset-2">
+      <div className="col-md-8 col-md-offset-2 data">
         <table className="table table-hover">
           <thead>
           <tr>
-            <th>City</th>
-            <th>Temperature</th>
-            <th>Pressure</th>
-            <th>Humidity</th>
+            <th className='left'>City</th>
+            <th className='center'>Temperature (K)</th>
+            <th className='center'>Pressure (hPa)</th>
+            <th className='center'>Humidity (%)</th>
           </tr>
           </thead>
           <tbody>
