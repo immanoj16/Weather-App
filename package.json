@@ -5,13 +5,16 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "webpack -p"
+    "build": "NODE_ENV='production' webpack -p",
+    "deploy": "npm run build && firebase deploy",
+    "firebase-init": "firebase login && firebase init"
   },
   "keywords": [],
   "author": "Manoj Kumar <mmaharana14@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.16.2",
+    "firebase-tools": "^3.9.2",
     "lodash": "^4.17.4",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
